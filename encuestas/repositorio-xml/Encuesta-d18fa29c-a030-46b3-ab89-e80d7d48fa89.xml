@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<encuesta>
+    <apertura>2023-10-05T18:16:20.904740700</apertura>
+    <cierre>2023-10-06T18:16:20.948743200</cierre>
+    <id>d18fa29c-a030-46b3-ab89-e80d7d48fa89</id>
+    <instrucciones>Llevar DNI</instrucciones>
+    <opciones>
+        <texto>Jueves</texto>
+        <votos>juan@um.es</votos>
+    </opciones>
+    <opciones>
+        <texto>Viernes</texto>
+    </opciones>
+    <titulo>Fecha del parcial</titulo>
+</encuesta>
