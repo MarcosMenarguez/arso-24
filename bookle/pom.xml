@@ -4,34 +4,38 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>arso22</groupId>
-	<artifactId>cliente-servicio-web-soap</artifactId>
+	<groupId>arso</groupId>
+	<artifactId>bookle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	<packaging>jar</packaging>
+	
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
 	</properties>
 
 
 	<dependencies>
 
-		<!-- JAX-WS, necesario si Java > 8 -->
+		<!-- JAXB: solo es necesario si JDK > 8 -->
 
 		<dependency>
-			<groupId>javax.xml.ws</groupId>
-			<artifactId>jaxws-api</artifactId>
-			<version>2.3.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.sun.xml.ws</groupId>
-			<artifactId>jaxws-rt</artifactId>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
 			<version>2.3.1</version>
 		</dependency>
 
-		<!-- fin -->
+		<dependency>
+			<groupId>org.glassfish.jaxb</groupId>
+			<artifactId>jaxb-runtime</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+
+		<!-- test lib -->
 
 		<dependency>
 			<groupId>org.assertj</groupId>
@@ -51,35 +55,9 @@
 			<version>5.7.0-M1</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>jaxws-maven-plugin</artifactId>
-					<version>2.6</version>
-					<executions>
-						<execution>
-							<phase>generate-sources</phase>
-							<goals>
-								<goal>wsimport</goal>
-							</goals>
-						</execution>
-					</executions>
-					<configuration>
-						<sourceDestDir>
-							${project.build.directory}/generated-sources/</sourceDestDir>
-						<wsdlUrls>
-							<wsdlUrl>http://localhost:9999/ws/saludo?wsdl</wsdlUrl>							
-						</wsdlUrls>
-
-					</configuration>
-				</plugin>
-
-			</plugins>
-		</pluginManagement>
+		<pluginManagement></pluginManagement>
 	</build>
 </project>
