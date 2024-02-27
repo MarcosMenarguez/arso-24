@@ -7,8 +7,8 @@
 	<groupId>arso</groupId>
 	<artifactId>bookle</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
-	
+	<packaging>war</packaging>
+
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -19,6 +19,32 @@
 
 
 	<dependencies>
+
+		<!-- JAX-RS: Jersey -->
+
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>2.41</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.inject</groupId>
+			<artifactId>jersey-hk2</artifactId>
+			<version>2.41</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-jaxb</artifactId>
+			<version>2.41</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-json-gson</artifactId>
+			<version>2.41</version>
+		</dependency>
 
 		<!-- JAXB: solo es necesario si JDK > 8 -->
 
@@ -58,6 +84,14 @@
 	</dependencies>
 
 	<build>
-		<pluginManagement></pluginManagement>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.jetty</groupId>
+					<artifactId>jetty-maven-plugin</artifactId>
+					<version>9.4.53.v20231009</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 </project>
